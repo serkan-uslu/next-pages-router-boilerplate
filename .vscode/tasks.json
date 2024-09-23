@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Format Code",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "format"],
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Runs the prettier format check"
+    },
+    {
+      "label": "Format Code (Fix)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "format:fix"],
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Runs the prettier format fix"
+    },
+    {
+      "label": "Clean and Build Next.js Project",
+      "type": "shell",
+      "command": "sh",
+      "args": ["-c", "rm -rf .next && npm run build"],
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Removes the .next directory and then runs the npm run build script"
+    },
+    {
+      "label": "Clean and Build Storybook Project",
+      "type": "shell",
+      "command": "sh",
+      "args": ["-c", "rm -rf storybook-static && npm run build-storybook"],
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Removes the .storybook-static directory and then runs the npm run build-storybook script"
+    }
+  ]
+}
