@@ -18,6 +18,12 @@
     "build-storybook": "storybook build",
     "test": "vitest"
   },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "next": "14.2.13",
     "react": "^18",
@@ -47,6 +53,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "3.3.3",
     "storybook": "^8.3.2",
