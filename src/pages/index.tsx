@@ -1,11 +1,25 @@
 import Image from 'next/image';
+import { useFormatter, useNow, useTranslations } from 'use-intl';
+
+export async function getStaticProps(context: any) {
+  return {
+    props: {
+      // You can get the messages from anywhere you like. The recommended
+      // pattern is to put them in JSON files separated by locale and read
+      // the desired one based on the `locale` received from Next.js.
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}
 
 export default function Home() {
+  const t = useTranslations('Index');
+
   return (
     <div
       className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
-      <h1>Home</h1>
+      <h1>{t('title')}</h1>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"

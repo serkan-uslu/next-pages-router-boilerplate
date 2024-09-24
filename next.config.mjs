@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-
-/** @type {import('next').NextConfig} */
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const bundleAnalyzer = withBundleAnalyzer({
@@ -8,6 +6,10 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig = {
+  i18n: {
+    locales: ['en', 'tr'], // Desteklenen diller
+    defaultLocale: 'en', // Varsayılan dil
+  },
   reactStrictMode: true,
 };
 
